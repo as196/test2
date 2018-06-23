@@ -1,0 +1,78 @@
+package day4;
+
+class Worker 
+{
+String name;
+double salaryrate;
+double wsal;
+
+public String getName() {
+	return name;
+}
+
+
+public void setName(String name) {
+	this.name = name;
+}
+
+
+public double getSalaryrate() {
+	return salaryrate;
+}
+
+
+public void setSalaryrate(double salaryrate) {
+	this.salaryrate = salaryrate;
+}
+
+
+public Worker() 
+{
+}
+
+
+void ComputePay(int hours)
+{
+	
+}
+}
+class HourlyWorker extends Worker
+{
+	public void ComputePay(int hours)
+	{
+		if(hours<40 && hours>0)
+		{
+		 wsal=hours*salaryrate;
+		 System.out.println(wsal);
+		}
+		else
+		{
+			wsal= 40*salaryrate+0.5*salaryrate*(hours-40);
+		System.out.println(wsal);
+	}}
+	
+}
+class SalariedWorker extends Worker
+{
+	void ComputePay(int hours)
+	{
+		wsal=salaryrate*40;
+		System.out.println(wsal);
+	}
+	
+}
+public class test5
+{
+	public static void main(String args[])
+	{
+
+		
+		SalariedWorker s = new SalariedWorker();
+		HourlyWorker h = new HourlyWorker();
+		s.setSalaryrate(20.00);
+		h.setSalaryrate(20.00);
+		h.ComputePay(4);
+		s.ComputePay(5);
+		
+	}
+}
